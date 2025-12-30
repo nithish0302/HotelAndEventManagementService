@@ -1,14 +1,14 @@
-import InputTypeWithLabel from "../../components/common/InputTypeWithLabel";
-import { User, Mail, LogIn } from "lucide-react";
-import PasswordInput from "../../components/common/PasswordInput";
-import SignUpImage from "../../assets/SignUp.jpeg";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import routes from "../../config/routes";
 import toast from "react-hot-toast";
-import { signupApi } from "../../api/auth.api";
-import { useAuth } from "../../context/AuthContext";
+import { User, Mail, LogIn } from "lucide-react";
 import { MdWarning } from "react-icons/md";
+import SignUpImage from "../../assets/SignUp.jpeg";
+import { useAuth } from "../../context/AuthContext";
+import { signupApi } from "../../api/auth.api";
+import routes from "../../config/routes";
+import InputTypeWithLabel from "../../components/common/InputTypeWithLabel";
+import PasswordInput from "../../components/common/PasswordInput";
 
 // Google Icon Component
 const GoogleIcon = () => (
