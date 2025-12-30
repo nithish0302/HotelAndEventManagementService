@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
 import ProtectedRoutes from "../components/common/ProtectedRoutes";
+import UserDashboard from "../pages/user/UserDashboard";
 const AppRoutes = () => {
   const { user } = useAuth();
 
@@ -12,16 +13,16 @@ const AppRoutes = () => {
     <div>
       <Routes>
         <Route path={routes.auth.signin} element={<SignIn />} />
-        <Route path={routes.auth.singup} element={<SignUp />} />
+        <Route path={routes.auth.signup} element={<SignUp />} />
 
-        {/* <Route
-          path={routes.dashboard}
+        <Route
+          path={routes.user.dashboard}
           element={
-            <ProtectedRoutes allowedRoles={["user", "vendor", "admin"]}>
-              <Dashboard />
+            <ProtectedRoutes allowedRoles={["user"]}>
+              <UserDashboard />
             </ProtectedRoutes>
           }
-        /> */}
+        />
       </Routes>
     </div>
   );

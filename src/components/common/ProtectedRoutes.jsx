@@ -10,8 +10,14 @@ const ProtectedRoutes = ({ children, allowedRoles }) => {
     return <Navigate to={routes.auth.signin} />;
   }
 
-  if (allowedRoles && !allowedRoles.includes(user.roles)) {
-    return <Navigate to={routes.dashboard} />;
+  if (allowedRoles && !allowedRoles.includes(user.role)) {
+    if (user.role === "admin") {
+      return <Navigate to={routes.admin.dashboard} replace />;
+    }
+    if (user.role === "vendor") {
+      return <Navigate to={routes.vendor.dashboard} replace />;
+    }
+    return <Navigate to={routes.user.dashboard} replace />;
   }
   return children;
 };

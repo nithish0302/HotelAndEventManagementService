@@ -3,10 +3,20 @@ import SignUp from "../pages/auth/SignUp";
 const routes = {
   auth: {
     signin: "/",
-    singup: "/signup",
+    signup: "/signup",
   },
 
-  dashboard: "/dashboard",
+  user: {
+    dashboard: "/user_dashboard",
+  },
+
+  vendor: {
+    details: "/vendor_details",
+    dashboard: "/vendor_dashboard",
+  },
+  admin: {
+    dashboard: "/admin_dashboard",
+  },
 };
 
 export default routes;
