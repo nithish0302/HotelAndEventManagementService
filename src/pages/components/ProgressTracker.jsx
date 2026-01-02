@@ -1,71 +1,3 @@
-// import React from "react";
-// import { Check } from "lucide-react";
-
-// const ProgressTracker = ({ steps, currStep }) => {
-//   // Math.min ensures the line never exceeds 100% even if currStep is 4 (Review)
-//   const progressWidth = Math.min((currStep / (steps.length - 1)) * 100, 100);
-
-//   return (
-//     <div className="max-w-2xl mx-auto px-4">
-//       {/* Line Container */}
-//       <div className="relative flex items-center">
-//         {/* Background Line */}
-//         <div className="absolute top-1/2 left-0 w-full h-1 bg-slate-700 -translate-y-1/2" />
-
-//         {/* Active Line */}
-//         <div
-//           className="absolute top-1/2 left-0 h-1 bg-green-500 -translate-y-1/2 transition-all duration-500"
-//           style={{ width: `${progressWidth}%` }}
-//         />
-
-//         {/* Steps */}
-//         <div className="relative flex w-full justify-between">
-//           {steps.map((_, index) => {
-//             // Updated logic to handle the final checkmark visually
-//             const isCompleted =
-//               index < currStep || (currStep === 4 && index === 3);
-//             const isCurrent = index === currStep && currStep < 4;
-
-//             return (
-//               <div
-//                 key={index}
-//                 className={`w-12 h-12 flex items-center justify-center rounded-full font-semibold z-10 transition-all duration-300
-//                   ${
-//                     isCompleted
-//                       ? "bg-green-500 text-white"
-//                       : isCurrent
-//                       ? "bg-blue-500 text-white ring-4 ring-blue-500/30"
-//                       : "bg-slate-700 text-slate-400"
-//                   }`}
-//               >
-//                 {isCompleted ? <Check size={18} /> : index + 1}
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-
-//       <div className="flex justify-between text-[16px] text-slate-400 px-1 mt-4">
-//         {steps.map((label, index) => (
-//           <span
-//             key={index}
-//             className={`w-32 text-center transition-colors duration-300 ${
-//               index === currStep ? "text-blue-400 font-semibold" : ""
-//             } ${
-//               index < currStep || (currStep === 4 && index === 3)
-//                 ? "text-green-400"
-//                 : ""
-//             }`}
-//           >
-//             {label}
-//           </span>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProgressTracker;
 import React from "react";
 import { Check } from "lucide-react";
 
@@ -74,7 +6,7 @@ const ProgressTracker = ({ steps, currStep }) => {
   const progressWidth = Math.min((currStep / (steps.length - 1)) * 100, 100);
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-2 sm:px-4">
+    <div className="w-full max-w-3xl mx-auto px-2 sm:px-4 mt-4">
       {/* Line and Circles Container */}
       <div className="relative flex items-center px-6">
         {/* Background Line */}
